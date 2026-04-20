@@ -26,14 +26,14 @@ export function OurImpactSection() {
             <span className="text-primary text-3xl font-bold">Our impact</span>
             <span className="bg-accent h-1 w-15" />
           </div>
-          <h2 className="font-redrose text-primary max-w-2xl text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl">
+          <h2 className="font-redrose text-primary text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl">
             Real people, Real Change
           </h2>
         </div>
 
         {/* Diamond grid — desktop */}
         <div className="hidden lg:block">
-          <div className="relative mx-auto" style={{ width: 740, height: 620 }}>
+          <div className="relative mx-auto" style={{ width: 640, height: 620 }}>
             {/* Row 1 */}
             <DiamondStat
               value="85%"
@@ -115,17 +115,17 @@ function DiamondStat({
         style={{
           position: 'absolute',
           inset: 0,
-          borderRadius: '30px',
+          borderRadius: '70px',
           transform: 'rotate(45deg)',
-          backgroundColor: '#E8F5E9',
+          backgroundColor: '#EBFFED',
         }}
       />
       {/* Content — z-index keeps it above the rotated bg */}
       <div className="relative z-10 flex flex-col items-center gap-1 px-8 text-center">
-        <p className="font-redrose text-4xl font-bold text-[#1B5E2E]">
+        <p className="font-redrose text-secondary-foreground text-5xl font-bold">
           {value}
         </p>
-        <p className="text-xs leading-snug font-medium text-[#2d5a3a]">
+        <p className="text-foreground text-base leading-snug font-medium">
           {label.split('\n').map((line, i) => (
             <span key={i} className="block">
               {line}
@@ -144,7 +144,7 @@ function DiamondLogo({ style }: { style: React.CSSProperties }) {
       style={{ width: 210, height: 210, ...style }}
     >
       <div className="relative z-10 flex flex-col items-center gap-1">
-        <div className="relative h-14 w-14">
+        <div className="relative h-20 w-20">
           <Image
             src="/images/logo.png"
             alt="Teworh"
@@ -152,12 +152,6 @@ function DiamondLogo({ style }: { style: React.CSSProperties }) {
             className="object-contain"
           />
         </div>
-        <p className="font-redrose text-sm font-bold tracking-wide text-[#1B5E2E]">
-          TEWORH
-        </p>
-        <p className="text-[10px] font-medium tracking-widest text-[#3B924C] uppercase">
-          Sports & Skills Center
-        </p>
       </div>
     </div>
   )
