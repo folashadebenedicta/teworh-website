@@ -65,20 +65,20 @@ export function WhyTeworhSection() {
         </div>
 
         {/* 3×2 grid */}
-        <div className="grid grid-cols-1 divide-y divide-[#EAEAEA] rounded-xl border border-[#EAEAEA] sm:grid-cols-2 lg:grid-cols-3 lg:divide-y-0 [&>*:nth-child(-n+3)]:lg:border-b [&>*:nth-child(-n+3)]:lg:border-[#EAEAEA]">
+        <div className="grid grid-cols-1 divide-y divide-[#D7D7D7] rounded-xl border border-[#D7D7D7] sm:grid-cols-2 lg:grid-cols-3 lg:divide-y-0 [&>*:nth-child(-n+3)]:lg:border-b [&>*:nth-child(-n+3)]:lg:border-[#EAEAEA]">
           {reasons.map(({ icon: Icon, title, description }, i) => (
             <div
               key={title}
               className={`flex flex-col gap-5 p-8 sm:p-10 ${
-                i % 2 === 0 ? 'sm:border-r sm:border-[#EAEAEA]' : ''
+                i % 2 === 0 ? 'sm:border-r sm:border-[#D7D7D7]' : ''
               } ${
                 i % 3 !== 2
-                  ? 'lg:border-r lg:border-[#EAEAEA]'
+                  ? 'lg:border-r lg:border-[#D7D7D7]'
                   : 'lg:border-r-0'
               }`}
             >
               {/* Icon bubble */}
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#EEFFEF]">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#EEFFEF]">
                 <Icon className="h-6 w-6 text-[#60C44D]" />
               </div>
 
