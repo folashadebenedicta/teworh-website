@@ -9,13 +9,10 @@ import { SuccessStoriesSection } from '@/components/landing-page/success-stories
 import { WhatWeDoSection } from '@/components/landing-page/what-we-do'
 import { WhoWeServeSection } from '@/components/landing-page/who-we-serve'
 import { WhyTeworhSection } from '@/components/landing-page/why-teworh'
-import { Footer } from '@/components/layout/footer'
-import { Header } from '@/components/layout/header'
 
 export default function HomePage() {
   return (
     <main>
-      <Header />
       <HeroSection />
       <StatsSection />
       <WhatWeDoSection />
@@ -27,7 +24,6 @@ export default function HomePage() {
       <WhyTeworhSection />
       <OurPartnersSection />
       <GetInTouchSection />
-      <Footer />
     </main>
   )
 }

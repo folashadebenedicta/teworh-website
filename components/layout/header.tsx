@@ -1,7 +1,7 @@
 'use client'
-
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
@@ -22,6 +22,14 @@ const navLinks = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+
+  const isActive = (href: string) => pathname.startsWith(href)
+
+  const linkClass = (href: string, base: string) =>
+    `${base} font-medium transition-colors duration-200 ${
+      isActive(href) ? 'text-[#009606]' : 'text-primary hover:text-primary/80'
+    }`
 
   return (
     <header className="border-border sticky top-0 z-50 w-full border-b bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.06)]">
@@ -43,7 +51,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-primary hover:text-primary/80 text-lg font-medium transition-colors duration-200"
+              className={linkClass(link.href, 'text-lg')}
             >
               {link.label}
             </Link>
@@ -69,7 +77,6 @@ export function Header() {
               <Menu className="h-5 w-5 text-[#1d1e20]" />
             </Button>
           </SheetTrigger>
-
           <SheetContent side="right" className="flex w-72 flex-col px-6 pt-10">
             <SheetTitle className="sr-only">Navigation menu</SheetTitle>
             <SheetDescription className="sr-only">
@@ -98,7 +105,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-primary hover:text-primary/80 text-base font-medium transition-colors duration-200"
+                  className={linkClass(link.href, 'text-base')}
                 >
                   {link.label}
                 </Link>

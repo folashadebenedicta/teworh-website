@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Red_Rose } from 'next/font/google'
 import './globals.css'
 import localFont from 'next/font/local'
+import { Header } from '@/components/layout/header'
+import { Footer } from '@/components/layout/footer'
+import { CtaBannerSection } from '@/components/about/cta2'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -62,7 +65,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${redRose.variable} ${satoshi.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
