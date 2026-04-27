@@ -39,9 +39,9 @@ export function OurStorySection() {
       <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
           {/* ── LEFT: image collage ── */}
-          <div className="flex flex-col gap-4 lg:w-120 lg:shrink-0">
+          <div className="flex flex-col gap-4 lg:w-[30%] lg:shrink-0 xl:w-120">
             {/* Top: one tall image */}
-            <div className="relative h-72 w-full overflow-hidden rounded-2xl sm:h-80">
+            <div className="relative h-72 w-full overflow-hidden rounded-2xl sm:h-96">
               <Image
                 src="/images/story-d.jpg"
                 alt="Footballers celebrating"
@@ -53,7 +53,7 @@ export function OurStorySection() {
 
             {/* Middle: two side by side */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="relative h-48 overflow-hidden rounded-2xl">
+              <div className="relative h-64 overflow-hidden rounded-2xl">
                 <Image
                   src="/images/story-b.png"
                   alt="Aerial stadium track"
@@ -62,7 +62,7 @@ export function OurStorySection() {
                   sizes="240px"
                 />
               </div>
-              <div className="relative h-48 overflow-hidden rounded-2xl">
+              <div className="relative h-64 overflow-hidden rounded-2xl">
                 <Image
                   src="/images/story-c.png"
                   alt="Construction planning"
@@ -74,7 +74,7 @@ export function OurStorySection() {
             </div>
 
             {/* Bottom: one tall image */}
-            <div className="relative h-72 w-full overflow-hidden rounded-2xl sm:h-80">
+            <div className="relative h-72 w-full overflow-hidden rounded-2xl sm:h-96">
               <Image
                 src="/images/story-a.png"
                 alt="Netball game in action"
@@ -86,13 +86,11 @@ export function OurStorySection() {
           </div>
 
           {/* ── RIGHT: copy + timeline ── */}
-          <div className="flex flex-1 flex-col gap-8">
+          <div className="flex min-w-0 flex-1 flex-col gap-8">
             {/* Section label */}
             <div className="flex items-center gap-3">
-              <span className="text-primary text-xl font-semibold">
-                Our story
-              </span>
-              <span className="bg-accent h-1 w-10" />
+              <span className="text-primary text-3xl font-bold">Our story</span>
+              <span className="bg-accent h-1 w-14" />
             </div>
 
             {/* Heading */}
@@ -101,7 +99,7 @@ export function OurStorySection() {
             </h2>
 
             {/* Body copy */}
-            <div className="text-foreground flex flex-col gap-4 text-base leading-relaxed">
+            <div className="text-foreground flex flex-col gap-4 text-[clamp(0.875rem,1.2vw,1.125rem)] leading-relaxed font-medium">
               <p>
                 TEWORH was founded on a simple but urgent observation: Africa
                 has extraordinary athletic talent, but chronically underfunded
@@ -133,10 +131,10 @@ export function OurStorySection() {
             </div>
 
             {/* Timeline */}
-            <div className="flex flex-col divide-y divide-[#EAEAEA]">
+            <div className="flex flex-col divide-y divide-[#cccccc]">
               {timeline.map(({ year, title, description }) => (
                 <div key={year} className="flex items-start gap-6 py-5">
-                  <span className="font-redrose w-16 shrink-0 text-2xl font-bold text-[#3B924C]/30">
+                  <span className="font-redrose w-16 shrink-0 text-3xl font-bold text-[#DAFADF]">
                     {year}
                   </span>
                   <div className="flex flex-col gap-1">

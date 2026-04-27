@@ -48,12 +48,12 @@ export function PurposeDirectionSection() {
         {/* Mission + Vision cards */}
         <div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Mission */}
-          <div className="flex flex-col gap-5 rounded-2xl bg-[#F6FFF7] p-8">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E8F5E9]">
-              <Target className="h-5 w-5 text-[#3B924C]" strokeWidth={1.5} />
+          <div className="flex flex-col gap-5 rounded-2xl bg-[#F5FFF6] p-8">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EEFFEF]">
+              <Target className="h-5 w-5 text-[#009606]" strokeWidth={1.5} />
             </div>
             <div className="flex flex-col gap-3">
-              <p className="text-xs font-bold tracking-widest text-[#3B924C] uppercase">
+              <p className="text-xs font-bold tracking-widest text-[#009606] uppercase">
                 Our Mission
               </p>
               <h3 className="font-redrose text-primary text-2xl leading-snug font-bold sm:text-3xl">
@@ -71,12 +71,12 @@ export function PurposeDirectionSection() {
           </div>
 
           {/* Vision */}
-          <div className="flex flex-col gap-5 rounded-2xl bg-[#F6FFF7] p-8">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E8F5E9]">
-              <Eye className="h-5 w-5 text-[#3B924C]" strokeWidth={1.5} />
+          <div className="flex flex-col gap-5 rounded-2xl bg-[#F5FFF6] p-8">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EEFFEF]">
+              <Eye className="h-5 w-5 text-[#009606]" strokeWidth={1.5} />
             </div>
             <div className="flex flex-col gap-3">
-              <p className="text-xs font-bold tracking-widest text-[#3B924C] uppercase">
+              <p className="text-xs font-bold tracking-widest text-[#009606] uppercase">
                 Our Vision
               </p>
               <h3 className="font-redrose text-primary text-2xl leading-snug font-bold sm:text-3xl">
@@ -99,9 +99,9 @@ export function PurposeDirectionSection() {
           {pillars.map(({ number, title, description }) => (
             <div
               key={number}
-              className="flex flex-col gap-4 rounded-2xl bg-[#F6FFF7] p-6"
+              className="flex flex-col gap-4 rounded-2xl bg-[#F5FFF6] p-6"
             >
-              <span className="font-redrose text-3xl font-bold text-[#3B924C]/30">
+              <span className="font-redrose text-3xl font-bold text-[#009606]">
                 {number}
               </span>
               <div className="flex flex-col gap-2">

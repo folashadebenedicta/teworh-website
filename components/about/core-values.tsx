@@ -63,20 +63,20 @@ export function CoreValuesSection() {
         </div>
 
         {/* 3×2 grid — same pattern as WhyTeworhSection */}
-        <div className="grid grid-cols-1 divide-y divide-[#EAEAEA] rounded-xl border border-[#EAEAEA] sm:grid-cols-2 lg:grid-cols-3 lg:divide-y-0 [&>*:nth-child(-n+3)]:lg:border-b [&>*:nth-child(-n+3)]:lg:border-[#EAEAEA]">
+        <div className="grid grid-cols-1 divide-y divide-[#D7D7D7] rounded-xl border border-[#D7D7D7] sm:grid-cols-2 lg:grid-cols-3 lg:divide-y-0 [&>*:nth-child(-n+3)]:lg:border-b [&>*:nth-child(-n+3)]:lg:border-[#D7D7D7]">
           {values.map(({ icon: Icon, title, description }, i) => (
             <div
               key={title}
               className={`flex flex-col gap-5 p-8 sm:p-10 ${
-                i % 2 === 0 ? 'sm:border-r sm:border-[#EAEAEA]' : ''
+                i % 2 === 0 ? 'sm:border-r sm:border-[#D7D7D7]' : ''
               } ${
                 i % 3 !== 2
-                  ? 'lg:border-r lg:border-[#EAEAEA]'
+                  ? 'lg:border-r lg:border-[#D7D7D7]'
                   : 'lg:border-r-0'
               }`}
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E8F5E9]">
-                <Icon className="h-5 w-5 text-[#3B924C]" strokeWidth={1.5} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EEFFEF]">
+                <Icon className="h-5 w-5 text-[#024805]" strokeWidth={1.5} />
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="font-redrose text-primary text-xl font-bold">

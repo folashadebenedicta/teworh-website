@@ -21,10 +21,10 @@ export function AboutHero() {
           className="object-cover object-center"
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40" />
 
         {/* Breadcrumb — top left */}
-        <div className="absolute top-0 left-0 flex items-center gap-1 bg-[#3B924C]/80 px-4 py-2 text-sm font-medium text-white">
+        <div className="absolute top-0 left-0 flex items-center gap-1 bg-[#4CAF50]/60 px-4 py-2 pr-32 text-sm font-medium text-white [clip-path:polygon(0_0,100%_0,calc(100%-28px)_100%,0_100%)] md:pr-44 lg:pr-92">
           <Link href="/" className="hover:underline">
             Home
           </Link>
@@ -47,7 +47,7 @@ export function AboutHero() {
           <h2 className="font-redrose text-primary text-4xl leading-tight font-bold sm:text-5xl lg:flex-1">
             Changing sports in Africa
           </h2>
-          <p className="text-foreground text-base leading-relaxed lg:flex-1 lg:pt-2">
+          <p className="text-foreground text-lg leading-relaxed font-medium lg:flex-1 lg:pt-2">
             We are builders, developers, and believers. TEWORH exists to create
             the infrastructure, talent pipelines, and ecosystems that give
             African sports what it has always deserved a world-class foundation.
@@ -55,13 +55,13 @@ export function AboutHero() {
         </div>
 
         {/* Stats row */}
-        <div className="mt-12 grid grid-cols-2 divide-x divide-y divide-[#EAEAEA] border border-[#EAEAEA] lg:grid-cols-4 lg:divide-y-0">
+        <div className="mt-12 grid grid-cols-2 divide-x divide-y divide-[#cccccc] border-r border-[#cccccc] lg:grid-cols-4 lg:divide-y-0">
           {stats.map(({ value, label }) => (
             <div
               key={label}
               className="flex flex-col items-center gap-2 px-6 py-8 text-center"
             >
-              <p className="font-redrose text-4xl font-bold text-[#3B924C]/30 sm:text-5xl">
+              <p className="font-redrose text-4xl font-bold text-[#DAF4DF] sm:text-5xl">
                 {value}
               </p>
               <p className="text-primary text-base font-medium">{label}</p>
