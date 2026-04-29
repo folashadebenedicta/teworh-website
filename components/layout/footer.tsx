@@ -17,6 +17,7 @@ const legalLinks = [
   { label: 'Terms & Conditions', href: '/terms' },
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Partner with Us', href: '/partner' },
 ]
 
 const socialLinks = [
