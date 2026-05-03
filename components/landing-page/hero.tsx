@@ -20,11 +20,11 @@ export function HeroSection() {
               <span className="font-redrose inline-flex items-center text-[clamp(3.5rem,10.5vw,9.375rem)] leading-none font-bold text-[#3B924C]">
                 Sp
                 <span
-                  className="relative mx-[0.04em] inline-block"
-                  style={{ width: '0.72em', height: '0.72em' }}
+                  className="relative inline-block"
+                  style={{ width: '0.50em', height: '0.7em' }}
                 >
                   <Image
-                    src="/images/balls.png"
+                    src="/images/balls2.png"
                     alt=""
                     fill
                     className="object-cover"
