@@ -13,6 +13,15 @@ const images = [
   { src: '/images/project-10.png', alt: 'Stadium with blue roof' },
   { src: '/images/project-11.png', alt: 'Stadium seating and pitch' },
   { src: '/images/project-12.png', alt: 'Team inspecting site in hard hats' },
+  { src: '/images/project-13.jpeg', alt: 'Gravel and earthworks on site2' },
+  { src: '/images/project-14.jpeg', alt: 'Marked pitch under construction2' },
+  { src: '/images/project-15.jpeg', alt: 'Aerial view of sports complex2' },
+  { src: '/images/project-16.jpeg', alt: 'Stadium with blue roof2' },
+  { src: '/images/project-17.jpeg', alt: 'Stadium seating and pitch2' },
+  { src: '/images/project-18.jpeg', alt: 'Team inspecting site in hard hats2' },
+  { src: '/images/project-19.JPG', alt: 'Gravel and earthworks on site3' },
+  { src: '/images/project-20.JPG', alt: 'Marked pitch under construction3' },
+  { src: '/images/project-21.JPG', alt: 'Aerial view of sports complex3' },
 ]
 
 export function ProjectsGallery() {
@@ -23,7 +32,7 @@ export function ProjectsGallery() {
           {images.map(({ src, alt }) => (
             <div
               key={alt}
-              className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+              className="relative aspect-4/3 overflow-hidden rounded-2xl"
             >
               <Image
                 src={src}

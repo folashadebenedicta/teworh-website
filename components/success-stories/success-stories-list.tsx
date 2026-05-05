@@ -5,16 +5,6 @@ import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { stories } from '@/data/success-stories'
 
-const tagStyles: Record<string, string> = {
-  green: 'bg-[#DAFADF] text-[#009606]',
-  orange: 'bg-[#FFF3EA] text-[#FF5714]',
-}
-
-const dotStyles: Record<string, string> = {
-  green: 'bg-[#009606]',
-  orange: 'bg-[#FF5714]',
-}
-
 const PER_PAGE = 6
 
 export function SuccessStoriesList() {
@@ -53,16 +43,6 @@ export function SuccessStoriesList() {
                 <h2 className="font-redrose text-primary text-2xl font-bold sm:text-3xl">
                   {story.name}
                 </h2>
-
-                {/* Tag */}
-                <span
-                  className={`inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium ${tagStyles[story.tagColor]}`}
-                >
-                  <span
-                    className={`h-1.5 w-1.5 rounded-full ${dotStyles[story.tagColor]}`}
-                  />
-                  {story.tag}
-                </span>
 
                 {/* Body paragraphs */}
                 <div className="flex flex-col gap-3">

@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -10,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import { useRouter } from 'next/navigation'
 
 const schema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -42,6 +42,8 @@ export function PartnerForm() {
     if (!res.ok) throw new Error('Failed to submit')
   }
 
+  const router = useRouter()
+
   return (
     <div>
       {/* ── Hero ── */}
@@ -56,11 +58,15 @@ export function PartnerForm() {
         <div className="absolute inset-0 bg-black/45" />
 
         {/* Back button */}
-        <div className="absolute top-0 left-0 flex items-center gap-1 bg-[#4CAF50]/60 px-4 py-2 pr-32 text-sm font-medium text-white [clip-path:polygon(0_0,100%_0,calc(100%-28px)_100%,0_100%)] md:pr-44">
-          <Link href="/" className="flex items-center gap-1 hover:underline">
+        <div className="absolute top-0 left-0 z-10 flex items-center gap-1 bg-[#4CAF50]/60 px-4 py-2 pr-32 text-lg font-medium text-white [clip-path:polygon(0_0,100%_0,calc(100%-58px)_100%,0_100%)] md:pr-92 lg:pr-150">
+          <button
+            type="button"
+            onClick={() => router.back()}
+            className="flex cursor-pointer items-center gap-1 hover:underline"
+          >
             <ChevronLeft className="h-4 w-4" />
             Back
-          </Link>
+          </button>
         </div>
 
         {/* Title */}

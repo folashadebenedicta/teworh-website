@@ -63,7 +63,7 @@ export function SuccessStoriesSection() {
   const activeStory = stories[selectedIndex]
 
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-white py-10">
       <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 flex flex-col items-center gap-3 text-center sm:mb-16">

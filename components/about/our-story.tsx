@@ -35,7 +35,7 @@ const timeline = [
 
 export function OurStorySection() {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-white">
       <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
           {/* ── LEFT: image collage ── */}

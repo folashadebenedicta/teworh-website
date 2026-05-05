@@ -5,19 +5,18 @@ import Image from 'next/image'
 const stats = [
   {
     value: '85%',
-    label:
-      'Of Skills Program Graduates\nEmployed or Self-Employed\nWithin 6 Months',
+    label: 'Of Skilled Program Graduates',
   },
   { value: '1,000+', label: 'Youth Reached\nThrough Skills Programs' },
-  { value: '6', label: 'World-Class\nFacilities Built & Managed' },
+  { value: '10+', label: 'World-Class\nFacilities Built & Managed' },
   { value: '10+', label: 'Sports Events\nOrganised' },
   { value: '500+', label: 'Athletes Trained\nAnd Counting' },
-  { value: '3+', label: 'Communities\nDirectly Impacted' },
+  { value: '10+', label: 'Communities\nDirectly Impacted' },
 ]
 
 export function OurImpactSection() {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-white py-10">
       <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 flex flex-col items-center gap-3 text-center">
@@ -37,9 +36,7 @@ export function OurImpactSection() {
             {/* Row 1 */}
             <DiamondStat
               value="85%"
-              label={
-                'Of Skills Program Graduates\nEmployed or Self-Employed\nWithin 6 Months'
-              }
+              label={'Of Skilled Program Graduates'}
               style={{ top: 0, left: 70 }}
             />
             <DiamondStat
@@ -50,7 +47,7 @@ export function OurImpactSection() {
 
             {/* Row 2 */}
             <DiamondStat
-              value="6"
+              value="10+"
               label={'World-Class\nFacilities Built & Managed'}
               style={{ top: 200, left: -70 }}
             />
@@ -68,7 +65,7 @@ export function OurImpactSection() {
               style={{ top: 400, left: 70 }}
             />
             <DiamondStat
-              value="3+"
+              value="10+"
               label={'Communities\nDirectly Impacted'}
               style={{ top: 400, left: 350 }}
             />
@@ -77,9 +74,9 @@ export function OurImpactSection() {
 
         {/* Mobile / tablet fallback */}
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:hidden">
-          {stats.map(({ value, label }) => (
+          {stats.map(({ value, label }, index) => (
             <div
-              key={value}
+              key={index}
               className="flex flex-col items-center gap-2 rounded-2xl bg-[#F0FAF1] px-4 py-6 text-center"
             >
               <p className="font-redrose text-3xl font-bold text-[#1B5E2E]">

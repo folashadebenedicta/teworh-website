@@ -31,7 +31,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="bg-[#F6FFF7] py-12 sm:py-16">
+    <section className="bg-[#F6FFF7]">
       <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 divide-x divide-y divide-[#ccc] lg:grid-cols-4 lg:divide-y-0">
           {stats.map(({ icon, value, label, sub }) => (

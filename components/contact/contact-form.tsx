@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -17,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { useRouter } from 'next/navigation'
 
 const schema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -40,7 +40,8 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Address',
-    value: '300a Samuel Nlemoha Street, Off Dr Ifeanyi Okowa Street.',
+    value:
+      '101, Kinshasa road opposite lema jubril house, Angwar rimi GRA kaduna.',
   },
   {
     icon: Phone,
@@ -77,6 +78,8 @@ export function ContactForm() {
     if (!res.ok) throw new Error('Failed to send')
   }
 
+  const router = useRouter()
+
   return (
     <div>
       {/* ── Hero image ── */}
@@ -91,11 +94,15 @@ export function ContactForm() {
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Back button */}
-        <div className="absolute top-0 left-0 flex items-center gap-1 bg-[#4CAF50]/60 px-4 py-2 pr-32 text-sm font-medium text-white [clip-path:polygon(0_0,100%_0,calc(100%-28px)_100%,0_100%)] md:pr-44">
-          <Link href="/" className="flex items-center gap-1 hover:underline">
+        <div className="absolute top-0 left-0 z-10 flex items-center gap-1 bg-[#4CAF50]/60 px-4 py-2 pr-32 text-lg font-medium text-white [clip-path:polygon(0_0,100%_0,calc(100%-58px)_100%,0_100%)] md:pr-92 lg:pr-150">
+          <button
+            type="button"
+            onClick={() => router.back()}
+            className="flex cursor-pointer items-center gap-1 hover:underline"
+          >
             <ChevronLeft className="h-4 w-4" />
             Back
-          </Link>
+          </button>
         </div>
 
         {/* Title */}
@@ -121,20 +128,21 @@ export function ContactForm() {
             {contactInfo.map(({ icon: Icon, label, value }) => (
               <div
                 key={label}
-                className="flex max-w-xs items-center justify-center gap-4 rounded-xl p-5"
+                className="flex w-full min-w-0 items-center gap-4 rounded-xl p-5"
                 style={{
                   border: '1px solid rgba(255,255,255,0.3)',
                   background: 'rgba(255,255,255,0.08)',
                 }}
               >
-                {/* Icon bubble */}
                 <div className="bg-accent flex h-11 w-11 shrink-0 items-center justify-center rounded-full">
                   <Icon className="h-5 w-5 text-white" />
                 </div>
-                {/* Text */}
-                <div className="flex flex-col gap-0.5">
+
+                <div className="min-w-0">
                   <p className="text-sm font-bold text-white">{label}</p>
-                  <p className="text-sm font-normal text-white/80">{value}</p>
+                  <p className="text-sm font-normal break-words text-white/80">
+                    {value}
+                  </p>
                 </div>
               </div>
             ))}

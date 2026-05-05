@@ -14,7 +14,7 @@ export function ProjectsHero() {
       {/* ── Hero: 4-panel collage ── */}
       <div className="relative h-64 w-full sm:h-80 lg:h-105">
         {/* Breadcrumb — sits above the panels */}
-        <div className="absolute top-0 left-0 z-10 flex items-center gap-1 bg-[#4CAF50]/60 px-4 py-2 pr-32 text-sm font-medium text-white [clip-path:polygon(0_0,100%_0,calc(100%-28px)_100%,0_100%)] md:pr-44 lg:pr-92">
+        <div className="absolute top-0 left-0 z-10 flex items-center gap-1 bg-[#4CAF50]/60 px-4 py-2 pr-32 text-lg font-medium text-white [clip-path:polygon(0_0,100%_0,calc(100%-58px)_100%,0_100%)] md:pr-92 lg:pr-150">
           <Link href="/" className="hover:underline">
             Home
           </Link>

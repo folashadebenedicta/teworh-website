@@ -49,10 +49,12 @@ export function GetInTouchSection() {
   } = useForm<FormValues>({ resolver: zodResolver(schema) })
 
   async function onSubmit(data: FormValues) {
-    // Replace with your API call
-    await new Promise(r => setTimeout(r, 1000))
-    console.log(data)
-    reset()
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    if (!res.ok) throw new Error('Failed to send message')
   }
 
   return (
@@ -70,7 +72,7 @@ export function GetInTouchSection() {
 
       {/* Content */}
       <div className="relative mx-auto max-w-360 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <div className="flex flex-col gap-16 lg:flex-row">
+        <div className="flex flex-col gap-16 lg:flex-row lg:items-center lg:gap-20">
           {/* Left: copy */}
           <div className="flex flex-col gap-6 lg:flex-1">
             <div className="flex items-center gap-3">
@@ -81,8 +83,7 @@ export function GetInTouchSection() {
             </div>
 
             <h2 className="font-redrose text-5xl leading-tight font-bold text-white sm:text-6xl lg:text-7xl">
-              Lets build something <br />
-              together
+              Lets build something together
             </h2>
 
             <p className="max-w-sm text-base leading-relaxed text-white/75">
@@ -94,7 +95,7 @@ export function GetInTouchSection() {
 
           {/* Right: form card */}
           <div
-            className="w-full rounded-2xl p-6 sm:p-8 lg:w-[580px] lg:shrink-0"
+            className="w-full rounded-2xl p-6 sm:p-8 lg:w-145 lg:shrink-0"
             style={{
               background: 'rgba(255,255,255,0.12)',
               backdropFilter: 'blur(12px)',
