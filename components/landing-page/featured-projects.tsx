@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import { useRef } from 'react'
@@ -53,8 +54,9 @@ export function FeaturedProjectsSection() {
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-4">
             {projects.map(({ src, alt }) => (
-              <div
+              <Link
                 key={alt}
+                href="/projects"
                 className="relative min-w-0 flex-[0_0_80%] overflow-hidden rounded-2xl sm:flex-[0_0_45%] lg:flex-[0_0_30%]"
                 style={{ aspectRatio: '4/3' }}
               >
@@ -65,7 +67,7 @@ export function FeaturedProjectsSection() {
                   className="object-cover transition-transform duration-500 hover:scale-105"
                   sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 30vw"
                 />
-              </div>
+              </Link>
             ))}
           </div>
         </div>

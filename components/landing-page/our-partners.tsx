@@ -84,7 +84,7 @@ export function OurPartnersSection() {
           size="pill"
           className="px-8 py-3 text-base"
         >
-          <Link href="/contact">Partner with us</Link>
+          <Link href="/partner">Partner with us</Link>
         </Button>
       </div>
     </section>

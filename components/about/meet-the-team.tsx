@@ -51,7 +51,7 @@ export function MeetTheTeamSection() {
         <div className="mb-16 overflow-hidden rounded-3xl bg-[#F6FFF7]">
           <div className="flex flex-col lg:flex-row">
             {/* Image */}
-            <div className="relative h-80 w-full shrink-0 lg:h-auto lg:w-[420px]">
+            <div className="relative h-80 w-full shrink-0 lg:h-auto lg:w-105">
               <Image
                 src="/images/Surajdeen.png"
                 alt="Dr Surajdeen Olaniyi Abdulwahab"
@@ -60,7 +60,7 @@ export function MeetTheTeamSection() {
                 sizes="(max-width: 1024px) 100vw, 420px"
               />
               {/* Fade into bg on mobile */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#F6FFF7] via-transparent to-transparent lg:hidden" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#F6FFF7] via-transparent to-transparent lg:hidden" />
             </div>
 
             {/* Content */}
@@ -69,7 +69,7 @@ export function MeetTheTeamSection() {
               <div className="flex items-center gap-3">
                 <span className="bg-accent h-1 w-8" />
                 <span className="text-xs font-bold tracking-widest text-[#3B924C] uppercase">
-                  Founder's Story
+                  Founder&apos;s Story
                 </span>
               </div>
 
@@ -79,7 +79,7 @@ export function MeetTheTeamSection() {
                   Dr. Surajdeen Olaniyi Abdulwahab
                 </h3>
                 <p className="text-accent text-xs font-bold tracking-widest uppercase">
-                  Founder — Teworh Foundation · Rockstars Academy · Sports &
+                  Founder - Teworh Foundation · Rockstars Academy · Sports &
                   Skills Centre
                 </p>
               </div>
@@ -88,20 +88,20 @@ export function MeetTheTeamSection() {
               <div className="text-foreground flex flex-col gap-4 text-base leading-relaxed">
                 <p>
                   Dr. Surajdeen is a visionary leader, entrepreneur, and
-                  relentless advocate for youth empowerment — a man who believes
+                  relentless advocate for youth empowerment, a man who believes
                   that every young person, regardless of background, carries
                   untapped potential waiting to be unlocked.
                 </p>
                 <p>
                   Driven by that conviction, he founded three interconnected
-                  platforms — each one a vehicle for discovery, development, and
+                  platforms, each one a vehicle for discovery, development, and
                   transformation. Through these institutions, he has built
                   pathways for young people to grow through sport, education,
                   entrepreneurship, and leadership.
                 </p>
                 <p>
                   His work goes beyond building organisations. Dr. Surajdeen
-                  builds people — mentoring the next generation of athletes,
+                  builds people, mentoring the next generation of athletes,
                   leaders, and changemakers, and creating environments where
                   talent is seen, nurtured, and scaled to its fullest
                   expression.
@@ -122,8 +122,8 @@ export function MeetTheTeamSection() {
 
               {/* Quote */}
               <blockquote className="border-accent text-foreground border-l-4 pl-4 italic">
-                "Inspiring hope. Unlocking potential. Building the next
-                generation."
+                &quot;Inspiring hope. Unlocking potential. Building the next
+                generation.&quot;
               </blockquote>
             </div>
           </div>
@@ -146,7 +146,7 @@ export function MeetTheTeamSection() {
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
               <div className="absolute bottom-0 left-0 p-5">
                 <p className="font-redrose text-lg font-bold text-white sm:text-xl">
                   {name}

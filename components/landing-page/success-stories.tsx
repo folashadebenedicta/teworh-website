@@ -5,30 +5,14 @@ import Link from 'next/link'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { stories } from '@/data/success-stories'
 
-const stories = [
-  {
-    category: 'FOOTBALLER',
-    title: 'The footballer who almost gave up',
-    excerpt:
-      "Emeka was 15 when he first walked through Teworh's gates barefoot, carrying a deflated ball, and convinced that football was just something to do after school. Three years later, he was signing his first professional contract with a club in Portugal...",
-    image: '/images/story-1.png',
-    alt: 'Young footballers training',
-    href: '/success-stories/emeka',
-  },
-  {
-    category: 'BASKETBALL',
-    title: 'From the streets to the national team',
-    excerpt:
-      'Chidi had never played on a proper court before Teworh. Today he represents Nigeria at the U-23 level and credits the coaching staff for everything...',
-    image: '/images/story-2.png',
-    alt: 'Basketball player dunking',
-    href: '/success-stories/chidi',
-  },
-]
-
-// Duplicate so Embla loop has enough slides to work seamlessly
 const loopedStories = [...stories, ...stories]
+
+const tagStyles = {
+  green: { bg: '#F0FAF1', text: '#3B924C', dot: '#3B924C' },
+  orange: { bg: '#FFF3EA', text: '#FF5714', dot: '#FF5714' },
+}
 
 export function SuccessStoriesSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -40,7 +24,6 @@ export function SuccessStoriesSection() {
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return
-    // Map back to real story index
     setSelectedIndex(emblaApi.selectedScrollSnap() % stories.length)
   }, [emblaApi])
 
@@ -54,13 +37,12 @@ export function SuccessStoriesSection() {
   }, [emblaApi, onSelect])
 
   const scrollTo = useCallback(
-    (index: number) => {
-      emblaApi?.scrollTo(index)
-    },
+    (index: number) => emblaApi?.scrollTo(index),
     [emblaApi]
   )
 
   const activeStory = stories[selectedIndex]
+  const activeColors = tagStyles[activeStory.tagColor]
 
   return (
     <section className="bg-white py-10">
@@ -82,47 +64,56 @@ export function SuccessStoriesSection() {
         {/* Desktop carousel */}
         <div className="hidden overflow-hidden lg:block" ref={emblaRef}>
           <div className="flex">
-            {loopedStories.map((s, i) => (
-              <div
-                key={i}
-                className="w-full shrink-0 pr-8 lg:w-full xl:w-4/5 2xl:w-4/5"
-              >
-                <div className="flex items-center gap-10">
-                  {/* Image */}
-                  <div className="relative h-80 w-105 shrink-0 overflow-hidden rounded-2xl">
-                    <Image
-                      src={s.image}
-                      alt={s.alt}
-                      fill
-                      className="object-cover"
-                      style={{ objectPosition: 'center 25%' }}
-                      sizes="420px"
-                    />
-                  </div>
-                  {/* Text */}
-                  <div className="flex flex-col gap-5">
-                    <span className="inline-flex w-fit items-center gap-2 rounded-full border bg-[#FFF3EA] px-4 py-1.5 text-sm font-semibold text-[#FF5714]">
-                      <span className="h-2 w-2 rounded-full bg-[#FF5714]" />
-                      {s.category}
-                    </span>
-                    <h3 className="font-redrose text-primary text-3xl font-bold lg:text-4xl">
-                      {s.title}
-                    </h3>
-                    <p className="text-foreground text-base leading-relaxed">
-                      {s.excerpt}
-                    </p>
-                    <Button
-                      asChild
-                      variant="accent"
-                      size="pill"
-                      className="w-fit px-8 py-3"
-                    >
-                      <Link href={s.href}>Read story</Link>
-                    </Button>
+            {loopedStories.map((s, i) => {
+              const colors = tagStyles[s.tagColor]
+              return (
+                <div
+                  key={i}
+                  className="w-full shrink-0 pr-8 lg:w-full xl:w-4/5 2xl:w-4/5"
+                >
+                  <div className="flex items-center gap-10">
+                    {/* Image */}
+                    <div className="relative h-80 w-105 shrink-0 overflow-hidden rounded-2xl">
+                      <Image
+                        src={s.image}
+                        alt={s.alt}
+                        fill
+                        className="object-cover"
+                        style={{ objectPosition: 'center 25%' }}
+                        sizes="420px"
+                      />
+                    </div>
+                    {/* Text */}
+                    <div className="flex flex-col gap-5">
+                      <span
+                        className="inline-flex w-fit items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-semibold"
+                        style={{ background: colors.bg, color: colors.text }}
+                      >
+                        <span
+                          className="h-2 w-2 rounded-full"
+                          style={{ background: colors.dot }}
+                        />
+                        {s.tag}
+                      </span>
+                      <h3 className="font-redrose text-primary text-3xl font-bold lg:text-4xl">
+                        {s.name}
+                      </h3>
+                      <p className="text-foreground line-clamp-4 text-base leading-relaxed">
+                        {s.body[0]}
+                      </p>
+                      <Button
+                        asChild
+                        variant="accent"
+                        size="pill"
+                        className="w-fit px-8 py-3"
+                      >
+                        <Link href="/success-stories">Read story</Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
 
@@ -138,15 +129,21 @@ export function SuccessStoriesSection() {
               sizes="100vw"
             />
           </div>
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#E8622A]/30 bg-[#FFF3EA] px-4 py-1.5 text-sm font-semibold text-[#E8622A]">
-            <span className="h-2 w-2 rounded-full bg-[#E8622A]" />
-            {activeStory.category}
+          <span
+            className="inline-flex w-fit items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-semibold"
+            style={{ background: activeColors.bg, color: activeColors.text }}
+          >
+            <span
+              className="h-2 w-2 rounded-full"
+              style={{ background: activeColors.dot }}
+            />
+            {activeStory.tag}
           </span>
           <h3 className="font-redrose text-primary text-2xl font-bold">
-            {activeStory.title}
+            {activeStory.name}
           </h3>
-          <p className="text-foreground text-base leading-relaxed">
-            {activeStory.excerpt}
+          <p className="text-foreground line-clamp-4 text-base leading-relaxed">
+            {activeStory.body[0]}
           </p>
           <Button
             asChild
@@ -154,7 +151,7 @@ export function SuccessStoriesSection() {
             size="pill"
             className="w-fit px-8 py-3"
           >
-            <Link href={activeStory.href}>Read story</Link>
+            <Link href="/success-stories">Read more</Link>
           </Button>
         </div>
 

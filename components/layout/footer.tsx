@@ -33,10 +33,10 @@ const socialLinks = [
   },
   {
     src: '/icons/linkedin.svg',
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/company/teworh-sports-skills-centre/',
     label: 'LinkedIn',
   },
-  { src: '/icons/twitter.svg', href: 'https://twitter.com', label: 'Twitter' },
+  { src: '/icons/x.svg', href: 'https://twitter.com', label: 'Twitter' },
 ]
 
 export function Footer() {
@@ -136,18 +136,18 @@ export function Footer() {
             <ul className="flex flex-col gap-3">
               <li>
                 <a
-                  href="mailto:hello@goodtenants.africa"
+                  href="mailto:teworhsportsandskills@gmail.com"
                   className="text-foreground hover:text-primary-footer text-lg font-medium transition-colors duration-200"
                 >
-                  hello@goodtenants.africa
+                  teworhsportsandskills@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+2348175437146"
+                  href="tel:+2349012397998"
                   className="text-foreground hover:text-primary-footer text-lg font-medium transition-colors duration-200"
                 >
-                  0817 5437 146
+                  09012397998
                 </a>
               </li>
             </ul>

@@ -46,12 +46,12 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'Phone number',
-    value: '+234 8023456789',
+    value: '09012397998',
   },
   {
     icon: Mail,
     label: 'Email Address',
-    value: 'info@teworh.com.ng',
+    value: 'teworhsportsandskills@gmail.com',
   },
 ]
 

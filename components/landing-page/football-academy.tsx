@@ -94,7 +94,7 @@ export function FootballAcademySection() {
           size="pill"
           className="px-8 py-3 text-base"
         >
-          <Link href="/training/football">Apply for football</Link>
+          <Link href="/apply">Apply for football</Link>
         </Button>
       </div>
     </section>
