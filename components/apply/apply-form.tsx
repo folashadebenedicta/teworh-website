@@ -54,9 +54,12 @@ export function ApplyForm() {
   } = useForm<FormValues>({ resolver: zodResolver(schema) })
 
   async function onSubmit(data: FormValues) {
-    await new Promise(r => setTimeout(r, 1000))
-    console.log(data)
-    reset()
+    const res = await fetch('/api/apply', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    if (!res.ok) throw new Error('Failed to submit application')
   }
 
   return (
