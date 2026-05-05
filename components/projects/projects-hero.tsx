@@ -43,7 +43,7 @@ export function ProjectsHero() {
         {/* Title — centered over all panels */}
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="font-redrose text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            Our <span className="text-accent">Projects</span>
+            Project <span className="text-accent">Gallery</span>
           </h1>
         </div>
       </div>

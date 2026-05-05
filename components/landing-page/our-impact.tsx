@@ -11,7 +11,7 @@ const stats = [
   { value: '1,000+', label: 'Youth Reached\nThrough Skills Programs' },
   { value: '6', label: 'World-Class\nFacilities Built & Managed' },
   { value: '10+', label: 'Sports Events\nOrganised' },
-  { value: '500+', label: 'Athletes Trained\nAcross All Disciplines' },
+  { value: '500+', label: 'Athletes Trained\nAnd Counting' },
   { value: '3+', label: 'Communities\nDirectly Impacted' },
 ]
 

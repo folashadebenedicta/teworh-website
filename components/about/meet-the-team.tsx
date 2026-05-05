@@ -2,40 +2,14 @@ import Image from 'next/image'
 
 const team = [
   {
-    name: 'Emeka Obi',
+    name: 'Dr Surajdeen Olaniyi Abdulwahab',
     role: 'Founder & CEO',
-    bio: 'Former national-level athlete turned infrastructure entrepreneur. Has overseen delivery of 10+ facilities across Nigeria since founding TEWORH in 2018.',
-    image: '/images/team-1.jpg',
+    image: '/images/Surajdeen.png',
   },
   {
-    name: 'Emeka Obi',
-    role: 'Founder & CEO',
-    bio: 'Former national-level athlete turned infrastructure entrepreneur. Has overseen delivery of 10+ facilities across Nigeria since founding TEWORH in 2018.',
-    image: '/images/team-2.jpg',
-  },
-  {
-    name: 'Emeka Obi',
-    role: 'Founder & CEO',
-    bio: 'Former national-level athlete turned infrastructure entrepreneur. Has overseen delivery of 10+ facilities across Nigeria since founding TEWORH in 2018.',
-    image: '/images/team-3.jpg',
-  },
-  {
-    name: 'Emeka Obi',
-    role: 'Founder & CEO',
-    bio: 'Former national-level athlete turned infrastructure entrepreneur. Has overseen delivery of 10+ facilities across Nigeria since founding TEWORH in 2018.',
-    image: '/images/team-1.jpg',
-  },
-  {
-    name: 'Emeka Obi',
-    role: 'Founder & CEO',
-    bio: 'Former national-level athlete turned infrastructure entrepreneur. Has overseen delivery of 10+ facilities across Nigeria since founding TEWORH in 2018.',
-    image: '/images/team-2.jpg',
-  },
-  {
-    name: 'Emeka Obi',
-    role: 'Founder & CEO',
-    bio: 'Former national-level athlete turned infrastructure entrepreneur. Has overseen delivery of 10+ facilities across Nigeria since founding TEWORH in 2018.',
-    image: '/images/team-3.jpg',
+    name: 'Team Members',
+    role: 'Team Members',
+    image: '/images/team.png',
   },
 ]
 
@@ -57,34 +31,36 @@ export function MeetTheTeamSection() {
           </h2>
         </div>
 
-        {/* 3×2 grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {team.map(({ name, role, bio, image }, i) => (
+        {/* 2-col grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {team.map(({ name, role, image }) => (
             <div
-              key={`${name}-${i}`}
-              className="flex flex-col overflow-hidden rounded-2xl border border-[#EAEAEA]"
+              key={name}
+              className="relative overflow-hidden rounded-2xl"
               style={{ boxShadow: '0 0 20px 0 rgba(169, 169, 169, 0.16)' }}
             >
               {/* Photo */}
-              <div className="relative h-64 w-full sm:h-80">
+              <div className="relative w-full" style={{ aspectRatio: '5/4' }}>
                 <Image
                   src={image}
                   alt={name}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
 
-              {/* Info */}
-              <div className="flex flex-col gap-2 p-5">
-                <h3 className="font-redrose text-primary text-xl font-bold">
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
+
+              {/* Text — bottom left */}
+              <div className="absolute bottom-0 left-0 p-5">
+                <p className="font-redrose text-lg font-bold text-white sm:text-xl">
                   {name}
-                </h3>
+                </p>
                 <p className="text-accent text-xs font-bold tracking-widest uppercase">
                   {role}
                 </p>
-                <p className="text-foreground text-sm leading-relaxed">{bio}</p>
               </div>
             </div>
           ))}

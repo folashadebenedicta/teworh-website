@@ -1,12 +1,12 @@
 import { CtaBannerSection } from '@/components/about/cta2'
-import { ProjectsGrid } from '@/components/projects/projects-grid'
+import { ProjectsGallery } from '@/components/projects/projects-grid'
 import { ProjectsHero } from '@/components/projects/projects-hero'
 
 export default function ProjectsPage() {
   return (
     <main>
       <ProjectsHero />
-      <ProjectsGrid />
+      <ProjectsGallery />
       <CtaBannerSection
         heading={
           <>

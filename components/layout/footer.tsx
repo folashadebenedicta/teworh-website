@@ -41,7 +41,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden pt-16 pb-8">
+    <footer className="relative overflow-hidden py-16">
       {/* Watermark */}
       <span
         aria-hidden="true"

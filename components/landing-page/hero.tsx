@@ -59,7 +59,7 @@ export function HeroSection() {
               size="pill"
               className="w-full p-6 sm:w-auto"
             >
-              <Link href="/contact">Partner with us</Link>
+              <Link href="/partner">Partner with us</Link>
             </Button>
             <Button
               asChild
@@ -67,7 +67,7 @@ export function HeroSection() {
               size="pill"
               className="w-full p-6 sm:w-auto"
             >
-              <Link href="/training">Apply for training</Link>
+              <Link href="/apply">Apply for training</Link>
             </Button>
           </div>
         </div>

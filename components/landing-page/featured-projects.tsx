@@ -6,113 +6,19 @@ import AutoScroll from 'embla-carousel-auto-scroll'
 import { useRef } from 'react'
 
 const projects = [
-  {
-    year: '2022',
-    status: 'COMPLETED',
-    statusColor: 'green',
-    title: 'Outdoor Football Pitch',
-    description: 'Community Name: Serves 600+ youth engaged',
-    image: '/images/project-1.png',
-    alt: 'Outdoor football pitch',
-  },
-  {
-    year: '2023',
-    status: 'COMPLETED',
-    statusColor: 'green',
-    title: 'Indoor Sports Hall Construction',
-    description: 'Community Name: Serves 800+ athletes',
-    image: '/images/project-2.png',
-    alt: 'Indoor sports hall',
-  },
-  {
-    year: '2024',
-    status: 'COMPLETED',
-    statusColor: 'green',
-    title: 'Youths Skills Center',
-    description: 'Community Name: Serves 360+ youth engaged',
-    image: '/images/project-3.png',
-    alt: 'Youth skills center gym',
-  },
-  {
-    year: '2025',
-    status: 'ONGOING',
-    statusColor: 'orange',
-    title: 'Aquatic Center Upgrade',
-    description: 'Community Name: Serves 360+ youth engaged',
-    image: '/images/project-4.png',
-    alt: 'Aquatic center pool',
-  },
+  { src: '/images/project-1.png', alt: 'Children playing on artificial turf' },
+  { src: '/images/project-2.png', alt: 'Football pitch with school building' },
+  { src: '/images/project-3.jpg', alt: 'Fenced football pitch' },
+  { src: '/images/project-4.png', alt: 'Construction site with bulldozer' },
+  { src: '/images/project-5.png', alt: 'Engineer inspecting stadium site' },
+  { src: '/images/project-6.png', alt: 'Open construction ground' },
+  { src: '/images/project-7.png', alt: 'Gravel and earthworks on site' },
+  { src: '/images/project-8.png', alt: 'Marked pitch under construction' },
+  { src: '/images/project-9.png', alt: 'Aerial view of sports complex' },
+  { src: '/images/project-10.png', alt: 'Stadium with blue roof' },
+  { src: '/images/project-11.png', alt: 'Stadium seating and pitch' },
+  { src: '/images/project-12.png', alt: 'Team inspecting site in hard hats' },
 ]
-
-const statusStyles: Record<string, string> = {
-  green: 'bg-[#DAFADF] text-[#009606]',
-  orange: 'bg-[#FFF3EA] text-[#FF5714]',
-}
-
-const dotStyles: Record<string, string> = {
-  green: 'bg-[#009606]',
-  orange: 'bg-[#FF5714]',
-}
-
-const yearStyles: Record<string, string> = {
-  green: 'text-[#DAF4DF]',
-  orange: 'text-[#FFE8DF]',
-}
-
-function ProjectCard({
-  year,
-  status,
-  statusColor,
-  title,
-  description,
-  image,
-  alt,
-}: (typeof projects)[0]) {
-  return (
-    <div className="min-w-0 flex-[0_0_85%] pr-5 sm:flex-[0_0_55%] lg:flex-[0_0_38%]">
-      <div
-        className="flex cursor-pointer flex-col gap-4 rounded-2xl bg-white p-4"
-        style={{ boxShadow: '0 0 20px 0 rgba(169, 169, 169, 0.16)' }}
-      >
-        {/* Image */}
-        <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-64">
-          <Image
-            src={image}
-            alt={alt}
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 85vw, (max-width: 1024px) 55vw, 38vw"
-          />
-        </div>
-
-        {/* Meta row: status badge + year watermark */}
-        <div className="flex items-center justify-between">
-          <span
-            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${statusStyles[statusColor]}`}
-          >
-            <span
-              className={`h-1.5 w-1.5 rounded-full ${dotStyles[statusColor]}`}
-            />
-            {status}
-          </span>
-          <span
-            className={`font-redrose text-5xl font-bold ${yearStyles[statusColor]}`}
-          >
-            {year}
-          </span>
-        </div>
-
-        {/* Text */}
-        <div className="flex flex-col gap-1">
-          <h3 className="font-redrose text-primary text-xl font-bold sm:text-2xl">
-            {title}
-          </h3>
-          <p className="text-foreground text-base">{description}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export function FeaturedProjectsSection() {
   const autoScroll = useRef(
@@ -142,12 +48,24 @@ export function FeaturedProjectsSection() {
         </div>
       </div>
 
-      {/* Carousel — centered within max-w-360, clipped */}
+      {/* Carousel */}
       <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {projects.map(project => (
-              <ProjectCard key={project.year} {...project} />
+          <div className="flex gap-4">
+            {projects.map(({ src, alt }) => (
+              <div
+                key={alt}
+                className="relative min-w-0 flex-[0_0_80%] overflow-hidden rounded-2xl sm:flex-[0_0_45%] lg:flex-[0_0_30%]"
+                style={{ aspectRatio: '4/3' }}
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 30vw"
+                />
+              </div>
             ))}
           </div>
         </div>
