@@ -140,7 +140,7 @@ export function ContactForm() {
 
                 <div className="min-w-0">
                   <p className="text-sm font-bold text-white">{label}</p>
-                  <p className="text-sm font-normal break-words text-white/80">
+                  <p className="text-sm font-normal wrap-break-word text-white/80">
                     {value}
                   </p>
                 </div>
