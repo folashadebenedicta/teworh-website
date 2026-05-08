@@ -73,12 +73,12 @@ export function WhoWeServeSection() {
         <div className="mb-12 flex flex-col items-center gap-3 text-center sm:mb-16">
           <div className="flex items-center gap-3">
             <span className="bg-accent h-1 w-15" />
-            <span className="text-primary text-3xl font-bold">
+            <span className="text-primary text-xl font-bold md:text-3xl">
               Who we serve
             </span>
             <span className="bg-accent h-1 w-15" />
           </div>
-          <h2 className="font-redrose text-primary max-w-2xl text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl">
+          <h2 className="font-redrose text-primary max-w-xs text-3xl leading-tight font-bold sm:text-5xl md:max-w-2xl lg:text-6xl">
             Built for every <br />
             level of sports
           </h2>

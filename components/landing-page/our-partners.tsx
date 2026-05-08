@@ -34,7 +34,7 @@ export function OurPartnersSection() {
         <div className="mb-12 flex flex-col items-center gap-3 text-center">
           <div className="flex items-center gap-3">
             <span className="bg-accent h-1 w-15" />
-            <span className="text-primary text-3xl font-bold">
+            <span className="text-primary text-xl font-bold md:text-3xl">
               Our Partners
             </span>
             <span className="bg-accent h-1 w-15" />

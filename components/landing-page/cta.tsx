@@ -82,7 +82,7 @@ export function GetInTouchSection() {
               </span>
             </div>
 
-            <h2 className="font-redrose text-5xl leading-tight font-bold text-white sm:text-6xl lg:text-7xl">
+            <h2 className="font-redrose text-3xl leading-tight font-bold text-white sm:text-6xl lg:text-7xl">
               Lets build something together
             </h2>
 

@@ -113,7 +113,7 @@ export function Header() {
             </nav>
 
             {/* Mobile CTA — pinned to bottom */}
-            <div className="mt-auto py-8">
+            <div className="py-4">
               <Button asChild variant="accent" size="pill" className="w-full">
                 <Link href="/contact" onClick={() => setMobileOpen(false)}>
                   Contact Us
