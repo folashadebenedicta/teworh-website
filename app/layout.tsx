@@ -4,7 +4,6 @@ import './globals.css'
 import localFont from 'next/font/local'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import { CtaBannerSection } from '@/components/about/cta2'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

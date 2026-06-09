@@ -9,11 +9,6 @@ import { stories } from '@/data/success-stories'
 
 const loopedStories = [...stories, ...stories]
 
-const tagStyles = {
-  green: { bg: '#F0FAF1', text: '#3B924C', dot: '#3B924C' },
-  orange: { bg: '#FFF3EA', text: '#FF5714', dot: '#FF5714' },
-}
-
 export function SuccessStoriesSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -42,7 +37,6 @@ export function SuccessStoriesSection() {
   )
 
   const activeStory = stories[selectedIndex]
-  const activeColors = tagStyles[activeStory.tagColor]
 
   return (
     <section className="bg-white py-10">
@@ -65,7 +59,6 @@ export function SuccessStoriesSection() {
         <div className="hidden overflow-hidden lg:block" ref={emblaRef}>
           <div className="flex">
             {loopedStories.map((s, i) => {
-              const colors = tagStyles[s.tagColor]
               return (
                 <div
                   key={i}
@@ -85,16 +78,6 @@ export function SuccessStoriesSection() {
                     </div>
                     {/* Text */}
                     <div className="flex flex-col gap-5">
-                      <span
-                        className="inline-flex w-fit items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-semibold"
-                        style={{ background: colors.bg, color: colors.text }}
-                      >
-                        <span
-                          className="h-2 w-2 rounded-full"
-                          style={{ background: colors.dot }}
-                        />
-                        {s.tag}
-                      </span>
                       <h3 className="font-redrose text-primary text-3xl font-bold lg:text-4xl">
                         {s.name}
                       </h3>
@@ -129,16 +112,6 @@ export function SuccessStoriesSection() {
               sizes="100vw"
             />
           </div>
-          <span
-            className="inline-flex w-fit items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-semibold"
-            style={{ background: activeColors.bg, color: activeColors.text }}
-          >
-            <span
-              className="h-2 w-2 rounded-full"
-              style={{ background: activeColors.dot }}
-            />
-            {activeStory.tag}
-          </span>
           <h3 className="font-redrose text-primary text-2xl font-bold">
             {activeStory.name}
           </h3>
