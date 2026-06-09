@@ -81,7 +81,7 @@ export const stories: Story[] = [
     alt: 'Godswill Daniel portrait',
   },
   {
-    name: 'Usman',
+    name: 'Usman, Abdulrazaq',
     tag: 'Academy Graduate',
     tagColor: 'green',
     body: [
@@ -95,7 +95,7 @@ export const stories: Story[] = [
     alt: 'Usman in indoor setting',
   },
   {
-    name: 'Evans',
+    name: 'Evans, Bamai',
     tag: 'Academy Graduate',
     tagColor: 'green',
     body: [
@@ -137,7 +137,7 @@ export const stories: Story[] = [
     tag: 'Professional placement',
     tagColor: 'green',
     body: [
-      'i am Ayman Mouktar Sirajo. I just want appreciate Teworh Soccer Center. I was around 15–16 years old when I joined Teworh Football Academy,The Academy gave me something that no training ground alone can teach, belief. Belief in my ability, in my potential, and in where the game could take me.',
+      'I am Ayman Mouktar Sirajo. I just want appreciate Teworh Soccer Center. I was around 15–16 years old when I joined Teworh Football Academy, The Academy gave me something that no training ground alone can teach, belief. Belief in my ability, in my potential, and in where the game could take me.',
       'The coaching, the discipline, the environment, everything at Teworh was built to make you better, not just as a footballer, but as a person. Coach Ola Suraj deserves a special mention. His guidance during those formative years left a mark I still carry onto every pitch I step on today. From training at Teworh to competing in the Istanbul 2nd Amateur League, this is only the beginning.',
     ],
     image: '/images/successstory-11.png',

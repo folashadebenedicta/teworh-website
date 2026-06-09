@@ -59,8 +59,6 @@ export function MeetTheTeamSection() {
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 420px"
               />
-              {/* Fade into bg on mobile */}
-              <div className="absolute inset-0 bg-linear-to-t from-[#F6FFF7] via-transparent to-transparent lg:hidden" />
             </div>
 
             {/* Content */}
